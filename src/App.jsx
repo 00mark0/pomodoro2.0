@@ -25,9 +25,9 @@ function App() {
   const intervalRef = useRef(null);
   const startTimeRef = useRef(0);
 
-  useEffect(() => {
+  /*useEffect(() => {
     Notification.requestPermission();
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     if (isRunning) {
@@ -52,11 +52,11 @@ function App() {
             clearInterval(intervalRef.current);
             new Audio(phaseSound).play();
 
-            if (Notification.permission === "granted") {
+            /*if (Notification.permission === "granted") {
               new Notification("Phase completed!", {
                 body: `Finished phase: ${phase}. Moving on to the next phase...`,
               });
-            }
+            }*/
 
             // Switch to the next phase
             switch (phase) {
@@ -229,19 +229,19 @@ function App() {
             <div className="flex gap-3">
               <button
                 onClick={start}
-                className="text-3xl font-semibold backdrop-blur-lg px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
+                className="text-3xl font-semibold px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
               >
                 Start
               </button>
               <button
                 onClick={pause}
-                className="text-3xl font-semibold backdrop-blur-lg px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
+                className="text-3xl font-semibold px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
               >
                 Pause
               </button>
               <button
                 onClick={reset}
-                className="text-3xl font-semibold backdrop-blur-lg px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
+                className="text-3xl font-semibold px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700"
               >
                 Reset
               </button>
@@ -309,7 +309,7 @@ function App() {
             </div>
             <button
               onClick={onClickApply}
-              className="text-3xl font-semibold backdrop-blur-lg px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700 mt-3"
+              className="text-3xl font-semibold px-2 rounded-md transition duration-300 ease-in-out  hover:text-blue-700 mt-3"
             >
               Apply
             </button>
