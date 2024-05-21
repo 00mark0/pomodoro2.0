@@ -25,9 +25,9 @@ function App() {
   const intervalRef = useRef(null);
   const startTimeRef = useRef(0);
 
-  /*useEffect(() => {
+  useEffect(() => {
     Notification.requestPermission();
-  }, []);*/
+  }, []);
 
   useEffect(() => {
     if (isRunning) {
@@ -52,11 +52,11 @@ function App() {
             clearInterval(intervalRef.current);
             new Audio(phaseSound).play();
 
-            /*if (Notification.permission === "granted") {
+            if (Notification.permission === "granted") {
               new Notification("Phase completed!", {
                 body: `Finished phase: ${phase}. Moving on to the next phase...`,
               });
-            }*/
+            }
 
             // Switch to the next phase
             switch (phase) {
