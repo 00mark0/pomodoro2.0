@@ -1,1 +1,1 @@
-# pomodoro2.0
+Pomodoro App rewritten with React
